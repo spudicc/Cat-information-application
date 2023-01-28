@@ -12,7 +12,6 @@ private const val JOB_ID = 1
 class CatAppService : JobIntentService() {
     override fun onHandleWork(intent: Intent) {
         CatFetcher(this).fetchItems()
-
     }
 
     companion object{

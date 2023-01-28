@@ -30,11 +30,11 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirectToHost() {
-        if (getBooleanPreference(DATA_IMPORTED)){
-            callDelayed(DELAY) { startActivity<HostActivity>() }
-        }
-        else
-        {
+        //if (getBooleanPreference(DATA_IMPORTED)){
+        //    callDelayed(DELAY) { startActivity<HostActivity>() }
+        //}
+        //else
+        //{
             if (isOnline()){
                 CatAppService.enqueue(this)
             }
@@ -42,7 +42,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 binding.tvSplash.text = getString(R.string.no_internet)
                 callDelayed(DELAY) {finish()}
             }
-        }
+        //}
     }
 
     private fun callDelayed(DELAY: Long, runnable: Runnable) {
